@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>⚠️ VIRUS DETECTED ⚠️</title>
+  <style>
+    body {
+      background: black;
+      color: lime;
+      font-family: monospace;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: blinkBg 0.2s infinite alternate;
+    }
+
+    @keyframes blinkBg {
+      0% { background: black; }
+      100% { background: red; }
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0;
+      color: red;
+      text-shadow: 0 0 10px red;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    #console {
+      margin-top: 20px;
+      text-align: left;
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      height: 200px;
+      overflow-y: auto;
+      box-shadow: 0 0 15px red inset;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚠️ VIRUS DETECTED ⚠️</h1>
+  <p>Sistem Anda sedang diretas...</p>
+  <div id="console"></div>
+
+  <script>
+    const consoleBox = document.getElementById("console");
+    const messages = [
+      "[!] Menghapus file C:\\Windows...",
+      "[!] Menginfeksi sistem kernel...",
+      "[!] Mencuri password...",
+      "[!] Mengirim data ke server...",
+      "[X] ERROR: Virus aktif!",
+      "[#] Sistem crash dalam 5...",
+      "[#] Sistem crash dalam 4...",
+      "[#] Sistem crash dalam 3...",
+      "[#] Sistem crash dalam 2...",
+      "[#] Sistem crash dalam 1...",
+      "[OK] Haha... PRANK 😉"
+    ];
+
+    let i = 0;
+    function fakeConsole() {
+      if (i < messages.length) {
+        consoleBox.innerHTML += messages[i] + "<br>";
+        i++;
+        setTimeout(fakeConsole, 1000);
+      }
+    }
+    fakeConsole();
+  </script>
+</body>
+</html>
